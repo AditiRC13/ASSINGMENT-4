@@ -1,0 +1,137 @@
+Question1
+ def keyword is used to define a function in Python, it is placed before a function name that is provided by the user to create a user-defined function.
+ 
+ # list of odd number in range 1 to 25
+ 
+ def odd_numbers(n):
+	return [x for x in range(0, n+1) if x%2 != 0
+ print(odd_number)
+ 
+ odd_number(25)
+ 
+ Questuion 2
+ We use *args and **kwargs as an argument when we are unsure about the number of arguments to pass in the functions
+ 
+ *args
+  #Python has *args which allow us to pass the variable number of non keyword arguments to function
+  #We use a  asterisk * before the parameter name to pass variable length arguments.The arguments are passed as a tuple      and these passed arguments make tuple inside the function with same name as the parameter excluding asterisk *
+  
+ def adder(*num):
+    sum = 0
+    
+    for n in num:
+        sum = sum + n
+
+    print("sum:",sum)
+
+ adder(3,5)
+ adder(4,5,6,7)
+ adder(1,2,3,5,6)
+ 
+ we don't have to write code for each case where the input of number are different 
+ 
+ **kwargs
+  # **kwargs, allows us to pass the variable length of keyword arguments to the function.
+  #In the function, we use the double asterisk ** before the parameter name to denote this type of argument. The            arguments are passed as a dictionary and these arguments make a dictionary inside function with name same as the          parameter excluding double asterisk **
+  
+  def intro(**data):
+    print("data type of arg ",type(data))
+
+    for key, value in data.items():
+        print("{} is {}".format(key,value))
+
+  intro(Firstname="Aditi", Lastname="Pandey", Age=23, Phone=1234567890)
+  intro(Firstname="vikas", Lastname="pandey", Email="vikas@gmail.com", Country="India", Age=55, Phone=9999999990)
+  
+  Question 3
+  
+ Iterator in Python is an object that is used to iterate over iterable objects like lists, tuples, dicts, and sets. The iterator object is initialized using the iter() method. It uses the next() method for iteration.
+
+1)__iter__(): The iter() method is called for the initialization of an iterator. This returns an iterator object
+2)__next__(): The next method returns the next value for the iterable. When we use a for loop to traverse any iterable object, internally it uses the iter() method to get an iterator object, which further uses the next() method to iterate over. This method raises a StopIteration to signal the end of the iteration.
+
+The first five elements of the given list [2, 4, 6, 8, 10, 12, 14,
+16, 18, 20].
+list=[2,4,6,8,10,12,14,16,18,20]
+list_iter = iter(list)
+for i in range (5):
+    print(next(list_iter))
+    
+Question 4
+
+Python provides a generator to create your own iterator function. A generator is a special type of function which does not return a single value, instead, it returns an iterator object with a sequence of values. In a generator function, a yield statement is used rather than a return statement. 
+
+yield keyword is used to create a generator function. A type of function that is memory efficient and can be used like an iterator object.
+
+difference bw yield and return
+*The return statement terminates the execution of the function. Whereas, the yield statement only pauses the execution of the function.
+*Another difference is return statements are never executed. whereas, yield statements are executed when the function resumes its execution
+
+def fun_generator():
+    yield "Hello world!!"
+    yield "Geeksforgeeks"
+ 
+ 
+obj = fun_generator()
+ 
+print(type(obj))
+ 
+print(next(obj))
+print(next(obj))
+
+Question 5
+ def prime_no():
+    i_prime =[]
+    for k in range(2,1001):
+       for p in i_prime:
+          if k % p == 0
+            break
+       else:
+          i_prime.append(k)
+          yield k
+n = prime_no()
+for i in range (20):
+    print(next(n))
+    
+Question 6
+ def series_fibo():
+  a,b=0,1
+  while True:
+      yield a
+      a,b=b,a+b
+  f1 = series_ fibo()  
+  for i in range (10):
+      print(next(f1))
+      
+Question 7
+
+s = "pwskills"
+list(map(lambda s:s, s))
+
+Question 8
+
+num = int (input("Enter the number:"))
+org = num
+rev = 0
+
+while num > 0:
+    rem = num % 10
+    rev = rev * 10 + rem
+    num = num // 10
+    
+print ("The reverse of ", org, "is ", rev)
+if rev == org:
+    print ("The number ", org, "is Palindrome")
+else:
+    print ("The number ", org, "is not a Palindrome")
+    
+Question 9
+
+def odd_numbers(n):
+    return [x for x in range(0, n) if x%2 != 0]
+
+print(odd_numbers(100))
+
+
+         
+    
